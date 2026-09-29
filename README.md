@@ -15,17 +15,16 @@ How can customer and loan data identify credit risk, estimate the probability of
 Probabilities are calibrated in every decile. Five risk bands have actual default rates of 1.7%, 4.3%, 8.0%, 13.2% and 25.5%. External scores are the most valuable inputs (removing them costs 0.033 AUC); history tables add about 0.009 AUC. The best approval cutoff depends on assumed loss and margin (6% to 30% across the ranges tried). Full reasoning: `docs/final_report.md`.
 
 ## Architecture
-```
-Kaggle CSVs (data/raw, not committed)
-        |  src/build_dataset.py : clean, ratios, history aggregates, split
-        v
-Modelling table (data/processed)
-        |  src/train.py, src/evaluate.py, src/policy.py, src/risk.py, src/explain.py
-        v
-models/ (PD model, input profile)   reports/ (metrics, aggregates)   portfolio.db (SQLite, sql/*.sql)
-        |
-        v  inference only
-Streamlit app (app/streamlit_app.py)  <--  llm/risk_analyst.py (validated context in, grounded note out)
+
+```mermaid
+flowchart TD
+    A["Kaggle CSVs<br/>data/raw, not committed"] -->|"src/build_dataset.py<br/>clean, ratios, history, split"| B["Modelling table<br/>data/processed"]
+    B -->|"train, evaluate, policy,<br/>risk, explain (src/)"| C["models/<br/>PD model + input profile"]
+    B --> D["reports/<br/>metrics and aggregates"]
+    B --> E["portfolio.db (SQLite)<br/>queries in sql/"]
+    C --> F["Streamlit app<br/>app/streamlit_app.py"]
+    D --> F
+    G["llm/risk_analyst.py<br/>validated context in,<br/>grounded note out"] --> F
 ```
 
 ## Documents
