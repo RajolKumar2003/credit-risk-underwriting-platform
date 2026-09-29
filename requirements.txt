@@ -1,0 +1,10 @@
+# Runtime requirements (what the deployed Streamlit app needs).
+# Versions match the environment the model file was saved in; a pickle can fail on other scikit-learn versions.
+streamlit>=1.40
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+scipy==1.17.1
+joblib>=1.5
+pydantic>=2.13
+anthropic>=0.40

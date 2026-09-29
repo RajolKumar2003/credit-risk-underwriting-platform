@@ -1,0 +1,10 @@
+model,feature_set,validation_roc_auc
+Logistic regression,Application,0.7467
+Logistic regression,+ ratios,0.7483
+Logistic regression,+ history,0.7577
+Random forest,Application,0.7398
+Random forest,+ ratios,0.7418
+Random forest,+ history,0.749
+Gradient boosting,Application,0.7528
+Gradient boosting,+ ratios,0.7601
+Gradient boosting,+ history,0.769

@@ -1,0 +1,6 @@
+-r requirements.txt
+# Only for rebuilding data, running notebooks and tests
+matplotlib>=3.10
+python-dotenv>=1.2
+pytest
+jupyter
