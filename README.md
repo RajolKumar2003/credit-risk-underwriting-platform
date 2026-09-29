@@ -1,5 +1,9 @@
 # AI-Powered Credit Risk & Loan Underwriting Analytics Platform
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://credit-risk-underwriting-platform-n6tcxus3sywcegkfugegav.streamlit.app/)
+
+**Live app:** https://credit-risk-underwriting-platform-n6tcxus3sywcegkfugegav.streamlit.app/
+
 Educational portfolio project. It is not a lending policy, risk thresholds and financial assumptions are project-defined and illustrative, and predictions must not be treated as real credit decisions.
 
 ## Question
