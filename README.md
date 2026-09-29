@@ -63,5 +63,13 @@ pytest
 ```
 Set `ANTHROPIC_API_KEY` to enable the LLM analyst; without it the app shows a deterministic template note.
 
-## Honest status
-The modelling, SQL and analyst modules are tested. The Streamlit UI and the live Anthropic call were written but could not be run in the build environment (Streamlit and the SDK were not installable there), so run the app once and fix any layout issues. Kaggle rules on public deployment have not been checked; the repository ships no raw data.
+## Status and limitations
+
+The full pipeline, the notebooks, the SQL analytics, the Streamlit app and the LLM analyst have been run end to end, and the app is deployed (link at the top).
+
+Known limitations:
+- **No time dimension.** The data has no dates, so validation uses one random split. Nothing is known about performance after economic change.
+- **Label.** The target is early repayment difficulty, not lifetime default. Loss and margin figures are illustrative assumptions.
+- **Age and gender** are model inputs. Removing them costs about 0.0025 AUC. The issue is documented in `docs/model_card.md` and the decision log (D31), and the app never asks for gender.
+- **Explanations** use permutation importance and occlusion, not SHAP.
+- **Data licence.** The repository ships no raw data. Kaggle's rules on public deployment have not been checked.
